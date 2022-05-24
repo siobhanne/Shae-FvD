@@ -44,15 +44,24 @@ summary {
 
 	--subGreen: #009946;
 	--subYellow: #FECA04;
+
+	--happertje: url(../images/bite.svg);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--color-background: #333333;
+		--happertje: url(../images/biteDark.svg);
 
 		/* --subGreen: #005C2A; */
 		/* --subYellow: #987902; */
-		filter: brightness(0.50);
+		filter: brightness(0.80);
+	}
+
+	h1 {
+		filter:
+			drop-shadow(0 0 .1em #ff09)
+			drop-shadow(0 0 .2em #0f69);
 	}
 }
 
@@ -71,6 +80,63 @@ body {
 	display: grid;
 	place-items: center;
 }
+
+
+body::before {
+	content: '';
+	position: absolute;
+	z-index: 100;
+
+	width: 100vw;
+	height: 100vw;
+
+	background-image: var(--happertje);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: right center;
+	/* background-color: #f008; */
+
+	right: 100%;
+	top: calc(50vh - 50vw);
+
+	animation-name: hapje;
+	animation-duration: 4s;
+	animation-delay: 8s;
+	transform-origin: 100vw center;
+	animation-fill-mode: forwards;
+}
+
+
+@keyframes hapje {
+	0%, 24.99% {
+		transform: none;
+	}
+
+	25%, 49.99% {
+		transform: translateX(25vw) rotate(30deg);
+	}
+
+	50%, 74.99% {
+		transform: translateX(50vw) translateY(-10vh) rotate(-20deg);
+	}
+
+	75%, 99.99% {
+		transform: translateX(80vw) translateY(-5vh) rotate(10deg);
+	}
+
+	100% {
+		transform: translateX(110vw);
+	}
+}
+
+
+
+
+
+
+
+
+
 
 /* FONT SETTINGS */
 
