@@ -44,24 +44,15 @@ summary {
 
 	--subGreen: #009946;
 	--subYellow: #FECA04;
-
-	--happertje: url(../images/bite.svg);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--color-background: #333333;
-		--happertje: url(../images/biteDark.svg);
 
 		/* --subGreen: #005C2A; */
 		/* --subYellow: #987902; */
-		filter: brightness(0.80);
-	}
-
-	h1 {
-		filter:
-			drop-shadow(0 0 .1em #ff09)
-			drop-shadow(0 0 .2em #0f69);
+		filter: brightness(0.50);
 	}
 }
 
@@ -80,63 +71,6 @@ body {
 	display: grid;
 	place-items: center;
 }
-
-
-body::before {
-	content: '';
-	position: absolute;
-	z-index: 100;
-
-	width: 100vw;
-	height: 100vw;
-
-	background-image: var(--happertje);
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: right center;
-	/* background-color: #f008; */
-
-	right: 100%;
-	top: calc(50vh - 50vw);
-
-	animation-name: hapje;
-	animation-duration: 4s;
-	animation-delay: 8s;
-	transform-origin: 100vw center;
-	animation-fill-mode: forwards;
-}
-
-
-@keyframes hapje {
-	0%, 24.99% {
-		transform: none;
-	}
-
-	25%, 49.99% {
-		transform: translateX(25vw) rotate(30deg);
-	}
-
-	50%, 74.99% {
-		transform: translateX(50vw) translateY(-10vh) rotate(-20deg);
-	}
-
-	75%, 99.99% {
-		transform: translateX(80vw) translateY(-5vh) rotate(10deg);
-	}
-
-	100% {
-		transform: translateX(110vw);
-	}
-}
-
-
-
-
-
-
-
-
-
 
 /* FONT SETTINGS */
 
@@ -302,25 +236,28 @@ https://codepen.io/Havatar/pen/wvjQwK?editors=0110 */
 @keyframes subDisco {
 
 	/* DISCO ANIMATIE */
-	0%, 9% {
+	0% {
 		color: var(--subYellow);
 	}
 
-	10%, 19% {
+	10% {
 		color: var(--subGreen);
 	}
 
-	20%, 29% {
+	20% {
 		color: var(--subYellow);
 	}
 
-	30%, 39% {
+	30% {
 		color: var(--subGreen);
 	}
 
-	40%, 49% {
+	40% {
 		color: var(--subYellow);
-		background-image: none;
+	}
+
+	49% {
+		color: var(--subYellow);
 	}
 
 
@@ -402,19 +339,19 @@ https://codepen.io/Havatar/pen/wvjQwK?editors=0110 */
 @keyframes wayDisco {
 
 	/* DISCO ANIMATIE */
-	0%, 9% {
+	0% {
 		color: var(--subGreen);
 	}
 
-	10%, 19% {
+	10% {
 		color: var(--subYellow);
 	}
 
-	20%, 29% {
+	20% {
 		color: var(--subGreen);
 	}
 
-	30%, 39% {
+	30% {
 		color: var(--subYellow);
 	}
 
@@ -424,7 +361,6 @@ https://codepen.io/Havatar/pen/wvjQwK?editors=0110 */
 
 	49% {
 		color: var(--subGreen);
-		background-image: none;
 	}
 
 
@@ -507,31 +443,47 @@ https://codepen.io/Havatar/pen/wvjQwK?editors=0110 */
 @keyframes subArrowDisco {
 
 	/* DISCO ANIMATIE */
-	0%, 9% {
+	0% {
 		background-color: var(--subYellow);
 	}
 
-	10%, 19% {
+	10% {
 		background-color: var(--subGreen);
 	}
 
-	20%, 29% {
+	20% {
 		background-color: var(--subYellow);
 	}
 
-	30%, 39% {
+	30% {
 		background-color: var(--subGreen);
 	}
 
-	40%, 49.99% {
+	40% {
 		background-color: var(--subYellow);
-		background-image: none;
+	}
+
+	50% {
+		background-color: var(--subYellow);
+	}
+
+	60% {
+		background-color: var(--subYellow);
+	}
+
+	70% {
+		background-color: var(--subYellow);
+	}
+
+	79% {
+		background-color: var(--subYellow);
 	}
 
 
 	/* HAMBURGER ANIMATIE */
 
-	50% {
+
+	99.5% {
 		background-image: linear-gradient(to top,
 				#E3A833 0% 68%,
 				transparent 68% 100%);
@@ -540,7 +492,7 @@ https://codepen.io/Havatar/pen/wvjQwK?editors=0110 */
 	}
 
 
-	60%, 100% {
+	100% {
 		background-image: linear-gradient(to top,
 				#E3A833 0% 68%,
 				#00A922 68% 100%);
@@ -557,46 +509,84 @@ https://codepen.io/Havatar/pen/wvjQwK?editors=0110 */
 
 
 @keyframes wayArrowDisco {
-	/* DISCO ANIMATIE */
-	0%, 9% {
-		background-color: var(--subGreen);
-	}
+/* DISCO ANIMATIE */
+0% {
+	background-color: var(--subGreen);
+}
 
-	10%, 19% {
-		background-color: var(--subYellow);
-	}
+10% {
+	background-color: var(--subYellow);
+}
 
-	20%, 29% {
-		background-color: var(--subGreen);
-	}
+20% {
+	background-color: var(--subGreen);
+}
 
-	30%, 39% {
-		background-color: var(--subYellow);
-	}
+30% {
+	background-color: var(--subYellow);
+}
 
-	40%, 49% {
-		background-color: var(--subGreen);
-	}
+40% {
+	background-color: var(--subGreen);
+}
 
-	50%, 84.99% {
+49% {
+	background-color: var(--subGreen);
+}
+
+50% {
+	background-color: var(--subYellow);
+}
+
+60% {
+	background-color: var(--subGreen);
+}
+
+70% {
+	background-color: var(--subGreen);
+}
+
+
+
+
+/* HAMBURGER ANIMATIE */
+
+
+71% {
+	background-clip: text;
+		-webkit-background-clip: text;
 		background-color: transparent;
-		background-image: none;
-	}
+}
 
+80% {
+	background-image: linear-gradient(to top,
+				#FF685A 0% 30%,
+				transparent 30% 100%);
 
-	/* HAMBURGER ANIMATIE */
+		/* background-color: transparent; */
+}
 
-	85%, 90% {
-		background-image: linear-gradient(to top,
-					#FF685A 0% 30%,
-					transparent 30% 100%);
-	}
+85% {
+	background-image: linear-gradient(to top,
+				#FF685A 0% 30%,
+				transparent 30% 100%);
 
-	100% {
-		background-image: linear-gradient(to top,
-					#FF685A 0% 30%,
-					#E3A833 30% 100%);
+		background-color: transparent;
+}
 
-			background-color: transparent;
-	}
+90% {
+	background-image: linear-gradient(to top,
+				#FF685A 0% 30%,
+				transparent 30% 100%);
+
+		background-color: transparent;
+}
+
+100% {
+	background-image: linear-gradient(to top,
+				#FF685A 0% 30%,
+				#E3A833 30% 100%);
+
+		background-color: transparent;
+}
 }

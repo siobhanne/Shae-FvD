@@ -66,14 +66,13 @@ body {
 	background-color: var(--color-background);
 
 	font-size: clamp(0.8em, 3vw, 2em);
-}
 
-/* FONT SETTINGS */
-body {
 	height: 100vh;
 	display: grid;
 	place-items: center;
 }
+
+/* FONT SETTINGS */
 
 h1 span:first-child {
 	position: relative;
@@ -108,11 +107,11 @@ h1 span:first-of-type::before {
 	content: '';
 	position: absolute;
 
-	right: 85%;
+	right: 83%;
 	bottom: 10%;
 
-	height:clamp(0.3em, 3vw, 2.5rem);  
-	width: clamp(0.3em, 3vw, 1.75rem); 
+	height: clamp(0.3em, 3vw, 2.5rem);
+	width: clamp(0.3em, 3vw, 1.75rem);
 
 	background-color: var(--subYellow);
 
@@ -121,7 +120,10 @@ h1 span:first-of-type::before {
 
 	animation-name: subArrowDisco;
 	animation-delay: 2s;
-	animation-duration: 2s;
+	animation-duration: 7s;
+	animation-timing-function: linear;
+	/* Bron: https://stackoverflow.com/questions/9131026/how-to-keep-styles-after-animation */
+	animation-fill-mode: forwards;
 }
 
 h1 span:last-of-type::after {
@@ -131,8 +133,8 @@ h1 span:last-of-type::after {
 	left: 83%;
 	top: 15.7%;
 
-	height:clamp(0.3em, 3vw, 2.5rem);  
-	width: clamp(0.5em, 3vw, 3.5rem); 
+	height: clamp(0.3em, 3vw, 2.5rem);
+	width: clamp(0.5em, 3vw, 3.5rem);
 
 
 	background-color: var(--subGreen);
@@ -142,7 +144,10 @@ h1 span:last-of-type::after {
 
 	animation-name: wayArrowDisco;
 	animation-delay: 2s;
-	animation-duration: 2s;
+	animation-duration: 7s;
+	animation-timing-function: linear;
+	/* Bron: https://stackoverflow.com/questions/9131026/how-to-keep-styles-after-animation */
+	animation-fill-mode: forwards;
 }
 
 
@@ -153,14 +158,15 @@ h1 span:first-child,
 span:nth-child(2),
 span:nth-child(3) {
 	color: var(--subYellow);
-	/* animation-name: subDisco;
-	animation-duration: 2s; */
 
 	width: 100px;
 	height: 100px;
 	animation-name: subDisco;
 	animation-delay: 2s;
-	animation-duration: 2s;
+	animation-duration: 7s;
+	animation-timing-function: linear;
+	/* Bron: https://stackoverflow.com/questions/9131026/how-to-keep-styles-after-animation */
+	animation-fill-mode: forwards;
 }
 
 
@@ -171,15 +177,18 @@ span:last-child {
 	color: var(--subGreen);
 
 	animation-name: wayDisco;
-	animation-duration: 2s;
+	animation-duration: 7s;
 	animation-delay: 2s;
+	animation-timing-function: linear;
+	/* Bron: https://stackoverflow.com/questions/9131026/how-to-keep-styles-after-animation */
+	animation-fill-mode: forwards;
 }
 
 
 
 /* ****************************************************************************************************** */
-/* EERSTE ANIMATIE */
-/* arrow staat erbuiten */
+/* BEGIN ANIMATIE */
+/* arrow staat erbuiten - grote arrow komt naar binnen */
 body {
 	background-image: url('../images/1-arrow.svg');
 	background-repeat: no-repeat;
@@ -204,7 +213,7 @@ voor later evt (gaat met scale 3d, dus alleen doen als ik het snap)
 https://codepen.io/Havatar/pen/wvjQwK?editors=0110 */
 
 
-
+/* ************************************************************************************************ */
 @keyframes eersteAniArrow {
 	100% {
 		background-position: -70em center;
@@ -221,130 +230,36 @@ https://codepen.io/Havatar/pen/wvjQwK?editors=0110 */
 	}
 }
 
-
-
 /* ****************************************************************************************************** */
-/* VIJDE ANIMATIE */
-/* color disco */
+/* OVER DE LETTERS S, U, B */
 
 @keyframes subDisco {
-	0% {
+
+	/* DISCO ANIMATIE */
+	0%, 9% {
 		color: var(--subYellow);
 	}
 
-	25% {
+	10%, 19% {
 		color: var(--subGreen);
 	}
 
+	20%, 29% {
+		color: var(--subYellow);
+	}
+
+	30%, 39% {
+		color: var(--subGreen);
+	}
+
+	40%, 49% {
+		color: var(--subYellow);
+		background-image: none;
+	}
+
+
+	/* HAMBURGER ANIMATIE */
 	50% {
-		color: var(--subYellow);
-	}
-
-	75% {
-		color: var(--subGreen);
-	}
-
-	100% {
-		color: var(--subYellow);
-	}
-}
-
-@keyframes wayDisco {
-	0% {
-		color: var(--subGreen);
-	}
-
-	25% {
-		color: var(--subYellow);
-	}
-
-	50% {
-		color: var(--subGreen);
-	}
-
-	75% {
-		color: var(--subYellow);
-	}
-
-	100% {
-		color: var(--subGreen);
-	}
-}
-
-@keyframes subArrowDisco {
-	0% {
-		background-color: var(--subYellow);
-	}
-
-	25% {
-		background-color: var(--subGreen);
-	}
-
-	50% {
-		background-color: var(--subYellow);
-	}
-
-	75% {
-		background-color: var(--subGreen);
-	}
-
-	100% {
-		background-color: var(--subYellow);
-	}
-}
-
-
-@keyframes wayArrowDisco {
-	0% {
-		background-color: var(--subGreen);
-	}
-
-	25% {
-		background-color: var(--subYellow);
-	}
-
-	50% {
-		background-color: var(--subGreen);
-	}
-
-	75% {
-		background-color: var(--subYellow);
-	}
-
-	100% {
-		background-color: var(--subGreen);
-	}
-}
-
-
-
-
-
-/* ****************************************************************************************************** */
-/* VIJDE ANIMATIE */
-
-h1 span {
-	animation-name: hamburger;
-	animation-duration: 5s;
-	animation-timing-function: linear;
-	animation-delay: 7s;
-}
-
-h1 span:first-of-type::before {
-	animation-name: hamburgerBefore;
-	animation-duration: 5s;
-	animation-delay: 5s;
-}
-
-h1 span:last-of-type::after {
-	animation-name: hamburgerAfter;
-	animation-duration: 5s;
-	animation-delay: 5s;
-}
-
-
-@keyframes hamburger {
-	0% {
 		background-image: linear-gradient(to top,
 				#E3A833 30%,
 				transparent 30% 100%);
@@ -353,7 +268,7 @@ h1 span:last-of-type::after {
 		color: transparent;
 	}
 
-	20% {
+	60% {
 		background-image: linear-gradient(to top,
 				#E3A833 30%,
 				#00A922 30% 39%,
@@ -363,7 +278,7 @@ h1 span:last-of-type::after {
 		color: transparent;
 	}
 
-	40% {
+	70% {
 		background-image: linear-gradient(to top,
 				#E3A833 30%,
 				#00A922 30% 39%,
@@ -374,7 +289,7 @@ h1 span:last-of-type::after {
 		color: transparent;
 	}
 
-	60% {
+	80% {
 		background-image: linear-gradient(to top,
 				#E3A833 30%,
 				#00A922 30% 39%,
@@ -386,7 +301,112 @@ h1 span:last-of-type::after {
 		color: transparent;
 	}
 
+	90% {
+		background-image: linear-gradient(to top,
+				#E3A833 30%,
+				#00A922 30% 39%,
+				#AC542B 39% 48%,
+				#FFD900 48% 57%,
+				#FF685A 57% 66%,
+				transparent 66% 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+
+	100% {
+		background-image: linear-gradient(to top,
+				#E3A833 30%,
+				#00A922 30% 39%,
+				#AC542B 39% 48%,
+				#FFD900 48% 57%,
+				#FF685A 57% 66%,
+				#E3A833 66%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+
+}
+
+
+
+/* OVER DE LETTERS W, A, Y */
+
+@keyframes wayDisco {
+
+	/* DISCO ANIMATIE */
+	0%, 9% {
+		color: var(--subGreen);
+	}
+
+	10%, 19% {
+		color: var(--subYellow);
+	}
+
+	20%, 29% {
+		color: var(--subGreen);
+	}
+
+	30%, 39% {
+		color: var(--subYellow);
+	}
+
+	40% {
+		color: var(--subGreen);
+	}
+
+	49% {
+		color: var(--subGreen);
+		background-image: none;
+	}
+
+
+
+	/* HAMBURGER ANIMATIE */
+	50% {
+		background-image: linear-gradient(to top,
+				#E3A833 30%,
+				transparent 30% 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+
+	60% {
+		background-image: linear-gradient(to top,
+				#E3A833 30%,
+				#00A922 30% 39%,
+				transparent 39% 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+
+	70% {
+		background-image: linear-gradient(to top,
+				#E3A833 30%,
+				#00A922 30% 39%,
+				#AC542B 39% 48%,
+				transparent 48% 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+
 	80% {
+		background-image: linear-gradient(to top,
+				#E3A833 30%,
+				#00A922 30% 39%,
+				#AC542B 39% 48%,
+				#FFD900 48% 57%,
+				transparent 57% 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+
+	90% {
 		background-image: linear-gradient(to top,
 				#E3A833 30%,
 				#00A922 30% 39%,
@@ -415,60 +435,102 @@ h1 span:last-of-type::after {
 
 
 
-@keyframes hamburgerBefore {
-	0% {
+/* ************************************************************************************************ */
+/* ANIMATIE VOOR DE BEFORE ARROW */
+
+@keyframes subArrowDisco {
+
+	/* DISCO ANIMATIE */
+	0%, 9% {
+		background-color: var(--subYellow);
+	}
+
+	10%, 19% {
+		background-color: var(--subGreen);
+	}
+
+	20%, 29% {
+		background-color: var(--subYellow);
+	}
+
+	30%, 39% {
+		background-color: var(--subGreen);
+	}
+
+	40%, 49.99% {
+		background-color: var(--subYellow);
+		background-image: none;
+	}
+
+
+	/* HAMBURGER ANIMATIE */
+
+	50% {
 		background-image: linear-gradient(to top,
-				#E3A833 0% 60%,
-				transparent 60% 100%);
+				#E3A833 0% 68%,
+				transparent 68% 100%);
 
 		background-color: transparent;
 	}
 
-	33% {
+
+	60%, 100% {
 		background-image: linear-gradient(to top,
-				#E3A833 0% 60%,
-				#00A922 60% 85%,
-				transparent 85% 100%);
-
-		background-color: transparent;
-	}
-
-	34% {
-		background-image: linear-gradient(to top,
-				#E3A833 0% 60%,
-				#00A922 60% 85%,
-				#AC542B 85% 100%);
-
-		background-color: transparent;
-	}
-
-	100% {
-		background-image: linear-gradient(to top,
-				#E3A833 0% 60%,
-				#00A922 60% 85%,
-				#AC542B 85% 100%);
+				#E3A833 0% 68%,
+				#00A922 68% 100%);
 
 		background-color: transparent;
 	}
 }
 
 
-@keyframes hamburgerAfter {
-	0% {
-		background-clip: text;
-		-webkit-background-clip: text;
-		color: transparent;
+
+/* ************************************************************************************************ */
+/* ANIMATIE VOOR DE AFTER ARROW */
+
+
+
+@keyframes wayArrowDisco {
+	/* DISCO ANIMATIE */
+	0%, 9% {
+		background-color: var(--subGreen);
 	}
 
-	85% {
-		background-clip: text;
-		-webkit-background-clip: text;
-		color: transparent;
+	10%, 19% {
+		background-color: var(--subYellow);
+	}
+
+	20%, 29% {
+		background-color: var(--subGreen);
+	}
+
+	30%, 39% {
+		background-color: var(--subYellow);
+	}
+
+	40%, 49% {
+		background-color: var(--subGreen);
+	}
+
+	50%, 84.99% {
+		background-color: transparent;
+		background-image: none;
+	}
+
+
+	/* HAMBURGER ANIMATIE */
+
+	85%, 90% {
+		background-image: linear-gradient(to top,
+					#FF685A 0% 30%,
+					transparent 30% 100%);
 	}
 
 	100% {
 		background-image: linear-gradient(to top,
-				#FF685A 0% 30%,
-				#E3A833 30% 100%);
+					#FF685A 0% 30%,
+					#E3A833 30% 100%);
+
+			background-color: transparent;
 	}
 }
