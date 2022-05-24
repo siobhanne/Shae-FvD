@@ -121,7 +121,7 @@ h1 span:first-of-type::before {
 
 	animation-name: subArrowDisco;
 	animation-delay: 2s;
-	animation-duration: 2s;
+	animation-duration: 7s;
 }
 
 h1 span:last-of-type::after {
@@ -142,7 +142,7 @@ h1 span:last-of-type::after {
 
 	animation-name: wayArrowDisco;
 	animation-delay: 2s;
-	animation-duration: 2s;
+	animation-duration: 7s;
 }
 
 
@@ -153,8 +153,6 @@ h1 span:first-child,
 span:nth-child(2),
 span:nth-child(3) {
 	color: var(--subYellow);
-	/* animation-name: subDisco;
-	animation-duration: 2s; */
 
 	width: 100px;
 	height: 100px;
@@ -276,20 +274,62 @@ https://codepen.io/Havatar/pen/wvjQwK?editors=0110 */
 		background-color: var(--subYellow);
 	}
 
-	25% {
+	10% {
 		background-color: var(--subGreen);
+	}
+
+	20% {
+		background-color: var(--subYellow);
+	}
+
+	30% {
+		background-color: var(--subGreen);
+	}
+
+	40% {
+		background-color: var(--subYellow);
 	}
 
 	50% {
 		background-color: var(--subYellow);
 	}
 
-	75% {
-		background-color: var(--subGreen);
+
+	/* vijfde animatie */
+
+	51% {
+		background-image: linear-gradient(to top,
+				#E3A833 0% 60%,
+				transparent 60% 100%);
+
+		background-color: transparent;
+	}
+
+	67% {
+		background-image: linear-gradient(to top,
+				#E3A833 0% 60%,
+				#00A922 60% 85%,
+				transparent 85% 100%);
+
+		background-color: transparent;
+	}
+
+	68% {
+		background-image: linear-gradient(to top,
+				#E3A833 0% 60%,
+				#00A922 60% 85%,
+				#AC542B 85% 100%);
+
+		background-color: transparent;
 	}
 
 	100% {
-		background-color: var(--subYellow);
+		background-image: linear-gradient(to top,
+				#E3A833 0% 60%,
+				#00A922 60% 85%,
+				#AC542B 85% 100%);
+
+		background-color: transparent;
 	}
 }
 
@@ -299,20 +339,45 @@ https://codepen.io/Havatar/pen/wvjQwK?editors=0110 */
 		background-color: var(--subGreen);
 	}
 
-	25% {
+	10% {
 		background-color: var(--subYellow);
+	}
+
+	20% {
+		background-color: var(--subGreen);
+	}
+
+	30% {
+		background-color: var(--subYellow);
+	}
+
+	40% {
+		background-color: var(--subGreen);
 	}
 
 	50% {
 		background-color: var(--subGreen);
 	}
 
-	75% {
-		background-color: var(--subYellow);
+
+	/* vijfde animatie */
+
+	60% {
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+
+	85% {
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
 	}
 
 	100% {
-		background-color: var(--subGreen);
+		background-image: linear-gradient(to top,
+				#FF685A 0% 30%,
+				#E3A833 30% 100%);
 	}
 }
 
@@ -327,20 +392,20 @@ h1 span {
 	animation-name: hamburger;
 	animation-duration: 5s;
 	animation-timing-function: linear;
-	animation-delay: 7s;
+	animation-delay: 10s;
 }
 
-h1 span:first-of-type::before {
+/* h1 span:first-of-type::before {
 	animation-name: hamburgerBefore;
 	animation-duration: 5s;
 	animation-delay: 5s;
-}
+} */
 
-h1 span:last-of-type::after {
+/* h1 span:last-of-type::after {
 	animation-name: hamburgerAfter;
 	animation-duration: 5s;
 	animation-delay: 5s;
-}
+} */
 
 
 @keyframes hamburger {
@@ -414,7 +479,7 @@ h1 span:last-of-type::after {
 }
 
 
-
+/* 
 @keyframes hamburgerBefore {
 	0% {
 		background-image: linear-gradient(to top,
@@ -450,10 +515,10 @@ h1 span:last-of-type::after {
 
 		background-color: transparent;
 	}
-}
+} */
 
 
-@keyframes hamburgerAfter {
+/* @keyframes hamburgerAfter {
 	0% {
 		background-clip: text;
 		-webkit-background-clip: text;
@@ -471,4 +536,4 @@ h1 span:last-of-type::after {
 				#FF685A 0% 30%,
 				#E3A833 30% 100%);
 	}
-}
+} */
