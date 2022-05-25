@@ -1,21 +1,5 @@
 /* CSS Document */
 
-/*********/
-/* FONTS */
-/*********/
-@font-face {
-	font-family: 'eenfont';
-	src: url('../fonts/eenfont.woff2') format('woff2'),
-		url('../fonts/eenfont.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-
-}
-
-
-
-
-
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -38,7 +22,6 @@ summary {
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
 	--color-text: #111;
 	--color-background: #eee;
 
@@ -53,8 +36,6 @@ summary {
 		--color-background: #333333;
 		--happertje: url(../images/biteDark.svg);
 
-		/* --subGreen: #005C2A; */
-		/* --subYellow: #987902; */
 		filter: brightness(0.80);
 	}
 
@@ -94,7 +75,6 @@ body::before {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: right center;
-	/* background-color: #f008; */
 
 	right: 100%;
 	top: calc(50vh - 50vw);
