@@ -152,12 +152,13 @@ header section {
 }
 
 
-/* jouw code */
 
 
+
+/* KNOPPEN LIKE SAVE SHARE */
 body > section:first-of-type {
 	position: absolute;
-	bottom: 11em;
+	bottom: 14em;
 	right: 0.5em;
 	display: flex;
 	flex-direction: column;
@@ -174,6 +175,36 @@ body > section:first-of-type button {
 
 
 
+/* SLIDER VAN NUMMER */
+.slidecontainer {
+	width: 100vw;
+	position: absolute;
+	text-align: center;
+	bottom: 11em;
+}
+
+.slider {
+	/* width: 90vw;
+	background: red; */
+
+	-webkit-appearance: none;  /* Override default CSS styles */
+  width: calc(100vw - 40px);
+  height: 0.3em;
+	border-radius: 50px;
+  background: var(--color-inactive);
+  -webkit-transition: .2s;
+}
+
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #04AA6D;
+  cursor: pointer;
+}
 
 
 
