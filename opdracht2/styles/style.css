@@ -27,7 +27,10 @@ button, summary {
 	cursor: pointer;
 }
 
-
+body {
+	margin: 0;
+	padding: 0;
+}
 
 
 
@@ -36,8 +39,12 @@ button, summary {
 /*********************/
 :root {
 	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--color-text:#fff;
+	--color-background:#333;
+	--color-inactive: #ccc;
+
+
+
 }
 
 
@@ -51,7 +58,175 @@ body {
   font-family:eenfont, sans-serif;
   color:var(--color-text);
   background-color:var(--color-background);
+
+	background-image: url(../images/weeknd.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	position: relative;
+	width: 100vw;
+	height: 100vh;
 }
+
+
+/* FONT SETTINGS */
+
+/* TITEL SONG + ARTIESTENNAAM */
+h1 {
+	font-family: inter;
+	font-size: 1.13em;
+	font-weight: bold;
+
+	margin: 0;
+}
+
+h2 {
+	font-family: inter;
+	font-size: 1.13em;
+	font-weight: normal;
+
+	margin: 0;
+}
+
+nav ul li a {
+	font-family: inter;
+	font-size: 0.75em;
+
+	text-decoration: none;
+}
+
+/* ************************************************************************************************************ */
+/* HEADER */
+header {
+	height: 6.8em;
+
+	background-image: linear-gradient(
+		#000,
+		transparent
+	);
+}
+
+
+
+
+/* TOP - NAVIGATIE */
+nav ul {
+	list-style: none;
+
+	display: flex;
+	justify-content: center;
+	
+	margin: 0;
+	padding: 0;	
+}
+
+nav ul li {
+	padding-top: 0.75em;
+}
+
+nav ul li:last-of-type a::before {
+	content: ' | ';
+	margin: 0 0.5em;
+}
+
+nav ul li:last-of-type a {
+	font-weight: bold;
+	color: var(--color-text);
+}
+
+nav ul li:first-of-type a {
+	color: var(--color-inactive);
+	
+}
+
+
+
+
+/* NAAM NUMMER + ARTIEST */
+header section {
+	margin-top: 1.7em;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 
 /* jouw code */
 
+
+body > section:first-of-type {
+	position: absolute;
+	bottom: 11em;
+	right: 0.5em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+body > section:first-of-type button {
+	background-color: transparent;
+	border: none;
+	margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************************************************************ */
+/* MUSIC CONTROL BUTTONS */
+body > section:last-of-type {
+	position: absolute;
+	bottom: 3.5em;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	/* left: calc(50vw - 3em); */
+}
+
+
+/* PLAY / PAUSE */
+body > section:last-of-type button:nth-child(2) {
+	background-image: linear-gradient(
+		#AB93F7,
+		#F8AFCB
+	);
+	border: none;
+	border-radius: 50%;
+	width: 7em;
+	height: 7em;
+
+	margin: 0 2em;
+}
+
+body > section:last-of-type button:nth-child(2) img {
+	display: block;
+	margin-left: 1.9em;
+}
+
+
+/* FORWARD / BACKWARD */
+body > section:last-of-type button:first-of-type, body > section:last-of-type button:last-of-type {
+	background-color: transparent;
+	border: none;
+}
+
+
+
+
+/* ************************************************************************************************************ */
+/* pijltje omhoog */
+
+body > img {
+	position: absolute;
+	bottom: 1em;
+	margin-left: calc(50vw - 12px);
+}
