@@ -58,6 +58,7 @@ function favorietMaken() {
   else {
     hartjeImg.src = "";
     hartjeImg.classList.add('favoriet');
+    hartjeImg.src = "images/heart_filled.svg";
     console.log("ik ben een rood hartje");
   }
 }
