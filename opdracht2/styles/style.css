@@ -80,11 +80,42 @@ body {
     max-width: 400px;
   }
 
+
+  /* content */
   body>div {
     display: block;
-    width: 100px;
-    /* background-color: red; */
+    margin-left: 420px;
+    width: 80vw;
   }
+  
+  body>div header {
+    top: 5em;
+  }
+  
+  body>div ul {
+    padding-top: 13em;
+    
+  }
+  
+  body>div ul li {
+    list-style: none;
+  }
+  
+  body>div ul li section {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0px;
+  
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+  }
+  
+  body>div ul li section img {
+    width: 4em;
+    height: 4em;
+    margin: 0px 15px;
+  }
+  
 }
 
 
@@ -117,37 +148,7 @@ body {
 /* LAPTOP CONTENT */
 
 body>div {
-  /* display: none; */
-  margin-left: 420px;
-  width: 80vw;
-}
-
-body>div header {
-  top: 5em;
-}
-
-body>div ul {
-  padding-top: 13em;
-  
-}
-
-body>div ul li {
-  list-style: none;
-}
-
-body>div ul li section {
-  display: flex;
-  flex-direction: row;
-  padding: 5px 0px;
-
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
-}
-
-body>div ul li section img {
-  width: 4em;
-  height: 4em;
-  margin: 0px 15px;
+  display: none;
 }
 
 
