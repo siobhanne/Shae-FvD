@@ -35,6 +35,8 @@ body {
   --color-background: #333;
   --color-inactive: #ccc;
 
+  --gradient: linear-gradient(#AB93F7,
+      #F8AFCB);
 
 
 }
@@ -96,39 +98,67 @@ voor over de images: */
 
   /* content */
   main:last-of-type {
-    /* display: block; */
     display: block !important;
-    margin-left: 420px;
-    width: 80vw;
+    margin-left: 400px;
+    width: calc(100vw - 400px) !important;
   }
 
   main:last-of-type header {
-    top: 5em;
+    height: 200px;
+    margin-left: 0px;
+    background-image: var(--gradient);
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
   }
 
+  main:last-of-type header h1 {
+    margin-left: 1.2em;
+    font-size: 3em;
+  }
+
+
+  
+
+
   main:last-of-type>ul {
-    padding-top: 13em;
+    padding-top: 6em;
 
   }
 
   main:last-of-type>ul li {
     list-style: none;
-  }
 
-  main:last-of-type>ul li section {
     display: flex;
     flex-direction: row;
-    padding: 5px 0px;
 
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    padding: 8px 0px;
+
+    border-top: 0.75px solid grey;
+    border-bottom: 0.75px solid grey;
   }
 
-  main:last-of-type>ul li section img {
+  main:last-of-type>ul li img {
     width: 4em;
     height: 4em;
     margin: 0px 15px;
   }
+
+  main:last-of-type>ul li section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  main:last-of-type button {
+    margin: 2em 0;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+  }
+
 
 }
 
@@ -138,32 +168,16 @@ voor over de images: */
 /* JOUW STYLING */
 /****************/
 body {
-  /* font-family: eenfont, sans-serif; */
-
   color: var(--color-text);
   background-color: var(--color-background);
 
   position: relative;
   width: 100vw;
   height: 100vh;
-
-
-  /* NEWNEWNEWNWNENWNEWNNEWNWNENWENNWNENENENWNEWNEWNENWENWNEWNEW */
-  /* height: 570px; */
-  /* width: 325px; */
-
 }
 
 
 
-
-
-/* **************************************************************** */
-/* LAPTOP CONTENT */
-
-main:last-of-type {
-  display: none;
-}
 
 
 
@@ -191,6 +205,16 @@ h2 {
 }
 
 
+h3 {
+  font-family: inter;
+  /* font-size: 1.13em; */
+  font-size: 1.1em;
+  font-weight: normal;
+  filter: brightness(0.75);
+
+  margin: 0;
+}
+
 
 
 /* PLAYLIST / NOW PLAYING */
@@ -201,6 +225,17 @@ main:first-of-type header nav ul li a {
 
   text-decoration: none;
 }
+
+
+
+/* LAPTOP CONTENT */
+
+main:last-of-type {
+  display: none;
+}
+
+
+
 
 /* ************************************************************************************************************ */
 /* HEADER TOPNAVIGATIE: PLAYLIST | NOW PLAYING */
@@ -392,8 +427,7 @@ main:first-of-type footer {
 
 /* PLAY / PAUSE */
 main:first-of-type footer button:nth-child(2) {
-  background-image: linear-gradient(#AB93F7,
-      #F8AFCB);
+  background-image: var(--gradient);
   border: none;
   border-radius: 50%;
   width: 7em;
@@ -510,3 +544,6 @@ main:first-of-type>ul li:nth-of-type(5) {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+
