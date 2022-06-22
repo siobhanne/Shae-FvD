@@ -3,8 +3,6 @@
 
 
 
-
-
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -30,15 +28,15 @@ body {
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-  /* startje */
   --color-text: #fff;
   --color-background: #333;
   --color-inactive: #ccc;
 
+  --mobielBreed: 400px;
+
+  --boxShadow: 2px 10px 20px white;
   --gradient: linear-gradient(#AB93F7,
       #F8AFCB);
-
-
 }
 
 /* dark mode niet zeer nodig omdat de body gevuld is met image en 
@@ -58,49 +56,57 @@ voor over de images: */
 /* LAPTOP */
 @media screen and (min-width: 768px) {
 
-  main:first-of-type, main:first-of-type footer {
+  /* eerste main: mobile layout */
+  main:first-of-type,
+  main:first-of-type footer {
     position: fixed;
     float: left;
-    max-width: 400px;
-
-    /* height: 100vh; */
+    max-width: var(--mobielBreed);
   }
 
   main:first-of-type header {
     display: none;
   }
 
+
+
   /* SLIDER VAN NUMMER */
-  ul li>input {
+  main:first-of-type ul li>input {
     width: 350px !important;
-    /* position: absolute; */
     margin-left: 25px !important;
-    
+
   }
 
   main:first-of-type>ul li {
-    max-width: 400px;
+    max-width: var(--mobielBreed);
 
   }
 
   main:first-of-type>ul {
-    max-width: 400px;
-    box-shadow: 2px 10px 20px white;
+    max-width: var(--mobielBreed);
+    box-shadow: var(--boxShadow);
   }
 
   main:first-of-type>ul li section:first-of-type {
-    max-width: 400px;
+    max-width: var(--mobielBreed);
   }
 
 
 
 
 
-  /* content */
+  /* ***************************************************************************** */
+  /* tweede main: bijkomende content voor de laptop */
+
+  h2 {
+    font-size: clamp(0.5em, 2vw, 1.4em);
+  }
+
+
   main:last-of-type {
     display: block !important;
-    margin-left: 400px;
-    width: calc(100vw - 400px) !important;
+    margin-left: var(--mobielBreed);
+    width: calc(100vw - var(--mobielBreed)) !important;
   }
 
   main:last-of-type header {
@@ -119,23 +125,24 @@ voor over de images: */
   }
 
 
-  
 
+
+
+
+/* lijst met nummers en artiesten */
 
   main:last-of-type>ul {
-    padding-top: 6em;
-
+    padding: 8em 3em 2em 3em;
   }
 
   main:last-of-type>ul li {
     list-style: none;
 
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: max-content max-content max-content auto;
 
-    padding: 8px 0px;
+    padding: 0.7em 0px;
 
-    border-top: 0.75px solid grey;
     border-bottom: 0.75px solid grey;
   }
 
@@ -145,19 +152,76 @@ voor over de images: */
     margin: 0px 15px;
   }
 
-  main:last-of-type>ul li section {
+  main:last-of-type>ul li section:first-of-type {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
 
-  main:last-of-type button {
-    margin: 2em 0;
+  /* play knop in playlist */
+  main:last-of-type ul li > button {
+    background-color: transparent;
+    border: none;   
+
     display: flex;
-    /* flex-direction: column; */
-    align-items: center;
+    align-self: center;
   }
+
+  main:last-of-type ul li > button img {
+    width: 1.7em;
+    height: 1.7em;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+
+  /* LIKE SAVE SHARE knoppen */
+  main:last-of-type ul li section:last-of-type {
+    display: flex;
+    justify-self: flex-end;
+  }
+
+  main:last-of-type ul li section:last-of-type button {
+    background-color: transparent;
+    border: none;
+
+    width: 3.5em;
+    
+  }
+
+  main:last-of-type ul li section:last-of-type button img {
+    height: 2.5em;
+
+    padding: 0;
+    margin: 0;
+  }
+
+
+
+  /* voeg toe knop */
+  main:last-of-type > button {
+    width: 10em;
+    height: 3em;
+    
+    margin-left: calc(50% - 5em);
+    margin-bottom: 3em;
+
+    background-image: var(--gradient);
+    border: none;
+
+    font-family: inter;
+    font-weight: 600;
+  }
+
+  main:last-of-type > button:hover {
+    border: 1px solid white;
+    color: white;
+  }
+
 
 
 }
@@ -187,8 +251,6 @@ body {
 /* TITEL SONG + ARTIESTENNAAM */
 h1 {
   font-family: inter;
-  /* font-size: 1.13em; */
-  /* font-size: clamp(1.3em, 5.5vw, 2.3em); */
   font-size: clamp(1em, 5vw, 1.5em);
   font-weight: bold;
 
@@ -197,7 +259,6 @@ h1 {
 
 h2 {
   font-family: inter;
-  /* font-size: 1.13em; */
   font-size: clamp(1em, 5vw, 1.5em);
   font-weight: normal;
 
@@ -207,8 +268,7 @@ h2 {
 
 h3 {
   font-family: inter;
-  /* font-size: 1.13em; */
-  font-size: 1.1em;
+  font-size: clamp(0.2em, 2vw, 1.1em);
   font-weight: normal;
   filter: brightness(0.75);
 
@@ -220,7 +280,6 @@ h3 {
 /* PLAYLIST / NOW PLAYING */
 main:first-of-type header nav ul li a {
   font-family: inter;
-  /* font-size: 0.75em; */
   font-size: clamp(0.1em, 3vw, 1em);
 
   text-decoration: none;
@@ -228,7 +287,7 @@ main:first-of-type header nav ul li a {
 
 
 
-/* LAPTOP CONTENT */
+/* LAPTOP CONTENT: zodat de content niet zichtbaar is op mobiele versie. */
 
 main:last-of-type {
   display: none;
@@ -240,12 +299,9 @@ main:last-of-type {
 /* ************************************************************************************************************ */
 /* HEADER TOPNAVIGATIE: PLAYLIST | NOW PLAYING */
 main:first-of-type header {
-  /* height: 6.8em; */
   width: 100vw;
   position: fixed;
   z-index: 100;
-  /* background-image: linear-gradient(#000,
-      transparent); */
 }
 
 main:first-of-type header nav ul {
@@ -274,7 +330,6 @@ main:first-of-type header nav ul li:last-of-type a {
 
 main:first-of-type header nav ul li:first-of-type a {
   color: var(--color-inactive);
-
 }
 
 
@@ -288,9 +343,6 @@ main:first-of-type>ul li section:first-of-type {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* top: 4em; */
-
-  /* position: fixed; */
 
   padding-top: 4em;
   width: 100vw;
@@ -335,8 +387,6 @@ main:first-of-type>ul li section:nth-of-type(2) button:nth-of-type(1) img.favori
   animation-duration: 0.75s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
-
-  /* border-radius: 20px 30px; */
 }
 
 @keyframes favoriet {
@@ -349,7 +399,6 @@ main:first-of-type>ul li section:nth-of-type(2) button:nth-of-type(1) img.favori
     width: 20px;
     height: auto;
   }
-
 
   75%,
   95% {
@@ -373,14 +422,6 @@ main:first-of-type>ul li section:nth-of-type(2) button:nth-of-type(1) img.favori
 
 /* ************************************************************************************************************ */
 /* SLIDER VAN NUMMER */
-/* main:first-of-type ul li>input {
-  width: 90vw;
-  position: relative;
-  left: calc(50% - 45vw);
-  bottom: 505px;
-  top: calc(100vh - 23em);
-  accent-color: #DFB4DB;
-} */
 
 main:first-of-type ul li>input {
   position: relative;
@@ -393,23 +434,7 @@ main:first-of-type ul li>input {
   accent-color: #DFB4DB;
 }
 
-/* main:first-of-type>ul li section:nth-of-type(2) {
-  position: relative;
-  top: calc(100vh - 32em);
-  float: right;
-  right: 0.5em;
-  display: flex;
-  flex-direction: column;
 
-  width: fit-content;
-}
-
-
-main:first-of-type>ul li section:nth-of-type(2) button {
-  background-color: transparent;
-  border: none;
-  margin-top: 1em;
-} */
 
 
 
@@ -417,19 +442,22 @@ main:first-of-type>ul li section:nth-of-type(2) button {
 /* MUSIC CONTROL BUTTONS */
 main:first-of-type footer {
   position: fixed;
+
   bottom: 3.5em;
   width: 100%;
+
   display: flex;
   justify-content: center;
-  /* left: calc(50vw - 3em); */
 }
 
 
 /* PLAY / PAUSE */
 main:first-of-type footer button:nth-child(2) {
   background-image: var(--gradient);
+
   border: none;
   border-radius: 50%;
+
   width: 7em;
   height: 7em;
 
@@ -509,7 +537,6 @@ main:first-of-type>ul li:first-of-type {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 25%;
-  /* @SHAE POSITION OVERAL BEKIJKEN */
 }
 
 
@@ -527,6 +554,7 @@ main:first-of-type>ul li:nth-of-type(3) {
   background-image: url(../images/laroi.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center bottom;
 }
 
 
@@ -535,6 +563,7 @@ main:first-of-type>ul li:nth-of-type(4) {
   background-image: url(../images/ajr.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center top;
 }
 
 
@@ -543,7 +572,5 @@ main:first-of-type>ul li:nth-of-type(5) {
   background-image: url(../images/jalebi.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center top;
 }
-
-
-

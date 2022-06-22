@@ -5,18 +5,17 @@ console.log("howdy");
 // ******************************************************************************************
 // FORWARD BUTTON
 // Bron: hulp van Sanne
-var previousButton = document.querySelector("footer button:nth-of-type(1)");
-var nextButton = document.querySelector("footer button:nth-of-type(3)");
-// var scherm = document.querySelector("body>ul li");
+var previousButton = document.querySelector("main:first-of-type footer button:nth-of-type(1)");
+var nextButton = document.querySelector("main:first-of-type footer button:nth-of-type(3)");
 
-var deLijst = document.querySelector("body>ul");
+var deLijst = document.querySelector("main:first-of-type>ul");
 
 nextButton.addEventListener("click", goDown);
 previousButton.addEventListener("click", goUp);
 
 
 
-// functies met toetsenbord functionaliteiten (kleine bron van thijs)
+// UI Event voor het toetsenbord (kleine bron van thijs)
 document.onkeydown = (e) => {
 
   e = e || window.event;
@@ -31,7 +30,7 @@ document.onkeydown = (e) => {
 
 
 
-
+// volgend nummer functie
 function goDown() {
   deLijst.scrollTop = deLijst.scrollTop + window.innerHeight;
   console.log(deLijst.scrollTop + window.innerHeight);
@@ -44,12 +43,15 @@ function goDown() {
 
   buttonIcoon.src = 'images/pause.svg';
 
+  // zodra de lijst is afgelopen begint hij weer opnieuw:
   if (artiest >= 5) {
     artiest = 0;
     deLijst.scrollTop = 0;
   }
 }
 
+
+// vorig nummer functie
 function goUp() {
   deLijst.scrollTop = deLijst.scrollTop - window.innerHeight;
   console.log(deLijst.scrollTop - window.innerHeight);
@@ -63,6 +65,7 @@ function goUp() {
 
   buttonIcoon.src = 'images/pause.svg';
 
+  // deze if is ervoor dat nummer 1 nummer 1 blijft en dat deLijst scrollTop niet in de min gaat rekenen
   if (artiest < 0) {
     artiest = 0;
     deLijst.scrollTop = 0;
@@ -104,14 +107,14 @@ hartjeKnop.addEventListener('click', favorietMaken);
 // Bron: hulp van Sanne
 var musicProgress = 0;
 var myInterval;
-var musicSlider = document.querySelector("ul li:nth-of-type(1) > input");
+var musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(1) > input");
 
-var theAudio = document.querySelector("ul li:nth-of-type(1) > audio");
+var theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(1) > audio");
 var audioDuration = 229;
 var isPlaying = false;
 
-var theButton = document.querySelector("footer button:nth-of-type(2)");
-var buttonIcoon = document.querySelector('footer button:nth-child(2) img');
+var theButton = document.querySelector("main:first-of-type footer button:nth-of-type(2)");
+var buttonIcoon = document.querySelector("main:first-of-type footer button:nth-child(2) img");
 
 var artiest = 0;
 
@@ -169,72 +172,69 @@ function toggleMusic() {
 }
 
 
-
+// Dit is zodat het systeem weet welke artiest aan de beurt is.
 function updateArtiest() {
   if (artiest == 0) {
-    theAudio = document.querySelector("ul li:nth-of-type(1) > audio");
+    theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(1) > audio");
     audioDuration = 229;
     theAudio.play();
 
+    musicProgress = 0;
     theAudio.currentTime = 0;
     console.log("This is: The Weeknd");
 
-    musicSlider = document.querySelector("ul li:nth-of-type(1) > input");
+    musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(1) > input");
   }
 
   if (artiest == 1) {
-    theAudio = document.querySelector("ul li:nth-of-type(2) > audio");
+    theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(2) > audio");
     audioDuration = 230;
     theAudio.play();
 
-    // musicProgress = 0;
+    musicProgress = 0;
     theAudio.currentTime = 0;
     console.log("This is: Michael Jackson");
 
-    musicSlider = document.querySelector("ul li:nth-of-type(2) > input");
+    musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(2) > input");
   }
 
   if (artiest == 2) {
-    theAudio = document.querySelector("ul li:nth-of-type(3) > audio");
+    theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(3) > audio");
     audioDuration = 230;
     theAudio.play();
+
     musicProgress = 0;
     theAudio.currentTime = 0;
     console.log("This is: The Kid Laroi");
 
-    musicSlider = document.querySelector("ul li:nth-of-type(3) > input");
+    musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(3) > input");
   }
 
   if (artiest == 3) {
-    theAudio = document.querySelector("ul li:nth-of-type(4) > audio");
+    theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(4) > audio");
     audioDuration = 230;
     theAudio.play();
+
     musicProgress = 0;
     theAudio.currentTime = 0;
     console.log("This is: AJR");
 
-    musicSlider = document.querySelector("ul li:nth-of-type(4) > input");
+    musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(4) > input");
   }
 
   if (artiest == 4) {
-    theAudio = document.querySelector("ul li:nth-of-type(5) > audio");
+    theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(5) > audio");
     audioDuration = 230;
     theAudio.play();
+
     musicProgress = 0;
     theAudio.currentTime = 0;
     console.log("This is: Tesher x Jason Derulo");
 
-    musicSlider = document.querySelector("ul li:nth-of-type(5) > input");
+    musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(5) > input");
   }
 }
 
-
-
-function update() {
-  if (deLijst.scrollTop == 1792) {
-    artiest == 2;
-  }
-}
 
 
 theButton.addEventListener("click", toggleMusic);
