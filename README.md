@@ -22,7 +22,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ## Opdracht 1 plan
 
-<details open>
+<details>
   <summary>uitwerken na schetsen idee (voor week 2)</summary>
 
 
@@ -43,7 +43,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ## Opdracht 1 reflectie
 
-<details open>
+<details>
   <summary>uitwerken bij afronden opdracht (voor week 4)</summary>
 
 
@@ -90,72 +90,137 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ## Opdracht 2 plan
 
-<details>
+<details open>
   <summary>uitwerken na schetsen idee (voor week 5)</summary>
 
 
   ### Je ontwerp:
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="ontwerp opdracht 2">
+  <img src="readme-images/2_het ontwerp.png" width="375px" alt="ontwerp opdracht 2">
 
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Javascript
+  - responsive
+  - UI Events kunnen toepassen
+  - Een echt werkende muziek app maken
 </details>
 
 
 
 ## Opdracht 2 test
 
-<details>
+<details open>
   <summary>uitwerken na testen (week 7)</summary>
 
   Neem minimaal 5 bevindingen op:
 
-
-
   ### Bevinding 1:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+
+  <img src="readme-images/2_pagina niet af.png" width="375px" alt="probleem: pagina niet af">
+  De pagina is nog niet af en werkt nog met technische problemen.
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
+  <img src="readme-images/2_pagina af.png" width="375px" alt="Oplossing: pagina af">
+  Met een wilsvermogen van een tijger ging ik op de laatste dag nog als een speer aan mijn code.
+  En bijzonderingswaardig ben ik nog heel ver gekomen.
 
 
   ### Bevinding 2:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
+  De pagina werkt nog niet op verschillende schermgroottes. Ze heeft het wel voor beiden apart, maar
+  het werkt nog niet in een geheel.
+  Hiervoor moest ze de code een beetje herschrijven, dit had te maken met display: none/block;
+  
+  Desktop:
+  <img src="readme-images/2_pagina niet af.png" width="375px" alt="probleem: pagina niet af">
+  
+  Mobiel:
+  <img src="readme-images/2_mobiel af.png" width="375px" alt="mobiel af">
+
+
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+
+  Door mobiel sectie en desktop sectie beiden in een eigen main te zetten heb ik het veel beter kunnen stijlen
+  en kon ik zo wel display none en block gebruiken.
+
+  <img src="readme-images/2_main oplossing.png" width="375px" alt="code van main">
+
+
 
 
 
   ### Bevinding 3:
-  ...
+  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+
+  Er is nog geen light/dark modus. Dit komt echter door het feit dat de body gevuld is met een image
+  en de knoppen niet hinderlijk zijn voor dark/light situaties. Wel kan het zeker efficient zijn 
+  om nog iets van een filter toe te voegen.
+  
+  <img src="readme-images/2_mobiel af.png" width="375px" alt="mobiel af">
+
+
+
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+
+  Door mobiel sectie en desktop sectie beiden in een eigen main te zetten heb ik het veel beter kunnen stijlen
+  en kon ik zo wel display none en block gebruiken.
+
+  <img src="readme-images/2_mobiel dark modus.png" width="375px" alt="mobiel dark modus">
+
+
+
+
+
+  ### Bevinding 4:
+  Het beoordelingsformulier:
+  <img src="readme-images/feedback formulier1.jpg" width="375px" alt="beoordelingsformulier">
+  <img src="readme-images/feedback formulier2.jpg" width="375px" alt="beoordelingsformulier">
+
 </details>
 
 
 
 ## Opdracht 2 reflectie
 
-<details>
+<details open>
   <summary>uitwerken bij afronden opdracht (voor week 8)</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="uitkomst opdracht 2">
+  <img src="readme-images/2_mobiel af.png" width="375px" alt="mobiel af">
+  <img src="readme-images/desktop af.png" width="375px" alt="desktop af">
 
 
   ### Dit ging goed/Heb ik geleerd: 
   Korte omschrijving met plaatje(s)
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="top">
+  Ik heb geleerd hoe je een muziekslider kan maken dat op audio gaat.
+  Ik heb over ScrollTop geleerd.
+  Ik heb geleerd hoe ik een breakpoint naar desktop nice kan maken (dit heb ik nog nooit eerder gedaan).
+
+
+  <img src="readme-images/2_mobiel af.png" width="375px" alt="mobiel af">
 
 
   ### Dit was lastig/Is niet gelukt:
   Korte omschrijving met plaatje(s)
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
+  <img src="readme-images/2_mobiel af.png" width="375px" alt="mobiel af">
+  Gek genoeg kun je alleen bij nummer 1 het nummer liken. Ik ben er nog steeds niet achter gekomen waarom
+  dat niet bij de andere nummers kan.
+  Net als dat je alleen bij de eerste kan door spoelen. Ik weet ook nog steeds niet daar de oplossing voor
+  bij de andere nummers.
+
+  Het is helaas niet gelukt om de nummers op te slaan en toe te voegen aan je playlist.
+  <img src="readme-images/2_opslaan.png" width="375px" alt="bummer">
+
+  En het is niet gelukt om te scrollen en met scrollTop het volgende nummer af te laten spelen. Dit
+  was een te grote puzzel voor me.
+
 </details>
