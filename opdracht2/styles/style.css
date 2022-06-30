@@ -461,6 +461,7 @@ h3 {
   .nowPlaying ul li>input {
     width: 350px;
     margin-left: 25px;
+    /* de width en margin klopte niet in em */
   }
 
   .nowPlaying>ul li {
@@ -494,7 +495,7 @@ h3 {
   }
 
   .playlist header {
-    height: 200px;
+    height: 12.5em;
     margin-left: 0px;
     background-image: var(--gradient);
 
@@ -525,7 +526,7 @@ h3 {
     display: grid;
     grid-template-columns: max-content max-content 1fr max-content;
 
-    padding: 0.7em 0px;
+    padding: 0.7em 0;
 
     border-bottom: 0.75px solid grey;
   }
@@ -533,7 +534,7 @@ h3 {
   .playlist>ul li img {
     width: 4em;
     height: 4em;
-    margin: 0px 15px;
+    margin: 0 0.95em;
   }
 
   .playlist>ul li section:first-of-type {
