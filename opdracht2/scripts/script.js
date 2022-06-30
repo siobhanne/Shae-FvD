@@ -5,10 +5,10 @@ console.log("howdy");
 // ******************************************************************************************
 // FORWARD BUTTON
 // Bron: hulp van Sanne
-var previousButton = document.querySelector("main:first-of-type footer button:nth-of-type(1)");
-var nextButton = document.querySelector("main:first-of-type footer button:nth-of-type(3)");
+var previousButton = document.querySelector(".nowPlaying footer button:nth-of-type(1)");
+var nextButton = document.querySelector(".nowPlaying footer button:nth-of-type(3)");
 
-var deLijst = document.querySelector("main:first-of-type>ul");
+var deLijst = document.querySelector(".nowPlaying>ul");
 
 nextButton.addEventListener("click", goDown);
 previousButton.addEventListener("click", goUp);
@@ -77,20 +77,20 @@ function goUp() {
 
 // ******************************************************************************************
 // OPSLAAN FAVORIET
-var hartjeKnop = document.querySelector("main:first-of-type>ul li section:nth-of-type(2) button:first-of-type");
-var hartjeImg = document.querySelector("main:first-of-type>ul li section:nth-of-type(2) button:first-of-type img");
+var hartenKnoppen = document.querySelectorAll(".nowPlaying>ul li section:nth-of-type(2) button:first-of-type");
 
 function favorietMaken() {
-  if (hartjeImg.classList.contains('favoriet')) {
-    hartjeImg.src = "images/heart.svg";
-    hartjeImg.classList.remove('favoriet');
+  var hartImg = this.querySelector("img");
+
+  if (this.classList.contains('favoriet')) {
+    hartImg.src = "images/heart.svg";
+    this.classList.remove('favoriet');
     console.log("ik ben een wit hartje");
   }
 
   else {
-    hartjeImg.src = "";
-    hartjeImg.classList.add('favoriet');
-    hartjeImg.src = "images/heart_filled.svg";
+    this.classList.add('favoriet');
+    hartImg.src = "images/heart_filled.svg";
     console.log("ik ben een rood hartje");
 
     // Hier zou dan code komen waarbij het nummer in een lijst wordt toegevoegd. maar ik heb daar 
@@ -98,7 +98,10 @@ function favorietMaken() {
   }
 }
 
-hartjeKnop.addEventListener('click', favorietMaken);
+hartenKnoppen.forEach(hartenKnop => {
+  hartenKnop.addEventListener('click', favorietMaken);
+});
+
 
 
 
@@ -107,14 +110,14 @@ hartjeKnop.addEventListener('click', favorietMaken);
 // Bron: hulp van Sanne
 var musicProgress = 0;
 var myInterval;
-var musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(1) > input");
+var musicSlider = document.querySelector(".nowPlaying ul li:nth-of-type(1) > input");
 
-var theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(1) > audio");
+var theAudio = document.querySelector(".nowPlaying ul li:nth-of-type(1) > audio");
 var audioDuration = 229;
 var isPlaying = false;
 
-var theButton = document.querySelector("main:first-of-type footer button:nth-of-type(2)");
-var buttonIcoon = document.querySelector("main:first-of-type footer button:nth-child(2) img");
+var theButton = document.querySelector(".nowPlaying footer button:nth-of-type(2)");
+var buttonIcoon = document.querySelector(".nowPlaying footer button:nth-child(2) img");
 
 var artiest = 0;
 
@@ -175,7 +178,7 @@ function toggleMusic() {
 // Dit is zodat het systeem weet welke artiest aan de beurt is.
 function updateArtiest() {
   if (artiest == 0) {
-    theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(1) > audio");
+    theAudio = document.querySelector(".nowPlaying ul li:nth-of-type(1) > audio");
     audioDuration = 229;
     theAudio.play();
 
@@ -183,11 +186,11 @@ function updateArtiest() {
     theAudio.currentTime = 0;
     console.log("This is: The Weeknd");
 
-    musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(1) > input");
+    musicSlider = document.querySelector(".nowPlaying ul li:nth-of-type(1) > input");
   }
 
   if (artiest == 1) {
-    theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(2) > audio");
+    theAudio = document.querySelector(".nowPlaying ul li:nth-of-type(2) > audio");
     audioDuration = 230;
     theAudio.play();
 
@@ -195,11 +198,11 @@ function updateArtiest() {
     theAudio.currentTime = 0;
     console.log("This is: Michael Jackson");
 
-    musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(2) > input");
+    musicSlider = document.querySelector(".nowPlaying ul li:nth-of-type(2) > input");
   }
 
   if (artiest == 2) {
-    theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(3) > audio");
+    theAudio = document.querySelector(".nowPlaying ul li:nth-of-type(3) > audio");
     audioDuration = 230;
     theAudio.play();
 
@@ -207,11 +210,11 @@ function updateArtiest() {
     theAudio.currentTime = 0;
     console.log("This is: The Kid Laroi");
 
-    musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(3) > input");
+    musicSlider = document.querySelector(".nowPlaying ul li:nth-of-type(3) > input");
   }
 
   if (artiest == 3) {
-    theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(4) > audio");
+    theAudio = document.querySelector(".nowPlaying ul li:nth-of-type(4) > audio");
     audioDuration = 230;
     theAudio.play();
 
@@ -219,11 +222,11 @@ function updateArtiest() {
     theAudio.currentTime = 0;
     console.log("This is: AJR");
 
-    musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(4) > input");
+    musicSlider = document.querySelector(".nowPlaying ul li:nth-of-type(4) > input");
   }
 
   if (artiest == 4) {
-    theAudio = document.querySelector("main:first-of-type ul li:nth-of-type(5) > audio");
+    theAudio = document.querySelector(".nowPlaying ul li:nth-of-type(5) > audio");
     audioDuration = 230;
     theAudio.play();
 
@@ -231,7 +234,7 @@ function updateArtiest() {
     theAudio.currentTime = 0;
     console.log("This is: Tesher x Jason Derulo");
 
-    musicSlider = document.querySelector("main:first-of-type ul li:nth-of-type(5) > input");
+    musicSlider = document.querySelector(".nowPlaying ul li:nth-of-type(5) > input");
   }
 }
 

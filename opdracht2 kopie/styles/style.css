@@ -1,0 +1,581 @@
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+button,
+summary {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+  --color-text: #fff;
+  --color-background: #333;
+  --color-inactive: #ccc;
+
+  --mobielBreed: 400px;
+
+  --boxShadow: 2px 10px 20px white;
+  --gradient: linear-gradient(#AB93F7,
+      #F8AFCB);
+}
+
+/* dark mode niet zeer nodig omdat de body gevuld is met image en 
+laptop body is altijd darkmode ivm stylingkeuze. Dus alleen een brightness filter
+voor over de images: */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    filter: brightness(0.75);
+  }
+}
+
+
+
+
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+
+
+
+
+/* FONT SETTINGS */
+
+/* TITEL SONG + ARTIESTENNAAM */
+h1 {
+  font-family: inter;
+  font-size: clamp(1em, 5vw, 1.5em);
+  font-weight: bold;
+
+  margin: 0;
+}
+
+h2 {
+  font-family: inter;
+  font-size: clamp(1em, 2vw, 1.5em);
+  font-weight: normal;
+
+  margin: 0;
+}
+
+
+h3 {
+  font-family: inter;
+  font-size: clamp(0.2em, 1.5vw, 1.1em);
+  font-weight: normal;
+  filter: brightness(0.75);
+
+  margin: 0;
+}
+
+
+
+/* PLAYLIST / NOW PLAYING */
+main:first-of-type header nav ul li a {
+  font-family: inter;
+  font-size: clamp(0.1em, 3vw, 1em);
+
+  text-decoration: none;
+}
+
+
+
+/* LAPTOP CONTENT: zodat de content niet zichtbaar is op mobiele versie. */
+
+main:last-of-type {
+  display: none;
+}
+
+
+
+
+/* ************************************************************************************************************ */
+/* HEADER TOPNAVIGATIE: PLAYLIST | NOW PLAYING */
+main:first-of-type header {
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+}
+
+main:first-of-type header nav ul {
+  list-style: none;
+
+  display: flex;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+main:first-of-type header nav ul li {
+  padding-top: 0.75em;
+}
+
+main:first-of-type header nav ul li:last-of-type a::before {
+  content: ' | ';
+  margin: 0 0.5em;
+}
+
+main:first-of-type header nav ul li:last-of-type a {
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+main:first-of-type header nav ul li:first-of-type a {
+  color: var(--color-inactive);
+}
+
+
+
+
+/* ************************************************************************************************************ */
+/* NAAM NUMMER + ARTIEST */
+main:first-of-type>ul li section:first-of-type {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 4em;
+  width: 100vw;
+
+  background-image: linear-gradient(#000,
+      transparent);
+}
+
+
+
+
+
+/* ************************************************************************************************************ */
+/* KNOPPEN LIKE SAVE SHARE */
+main:first-of-type>ul li section:nth-of-type(2) {
+  position: relative;
+  top: calc(100vh - 32em);
+  float: right;
+  right: 0.5em;
+  display: flex;
+  flex-direction: column;
+
+  width: fit-content;
+}
+
+
+main:first-of-type>ul li section:nth-of-type(2) button {
+  background-color: transparent;
+  border: none;
+  margin-top: 1em;
+}
+
+
+
+
+
+/* ANIMATIES KNOPPEN */
+
+/* favoriet */
+main:first-of-type>ul li section:nth-of-type(2) button:nth-of-type(1).favoriet img {
+  animation-name: favoriet;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+@keyframes favoriet {
+  0% {
+    width: 50px;
+    height: auto;
+  }
+
+  25% {
+    width: 20px;
+    height: auto;
+  }
+
+  75%,
+  95% {
+    width: 60px;
+    height: auto;
+  }
+
+  95%,
+  100% {
+    width: 50px;
+    height: auto;
+  }
+}
+
+
+
+
+
+
+
+
+/* ************************************************************************************************************ */
+/* SLIDER VAN NUMMER */
+
+main:first-of-type ul li>input {
+  position: absolute;
+  bottom: 12.5em;
+  margin-left: 5vw;
+  display: flex;
+  flex-direction: column;
+
+  width: 90vw;
+  accent-color: #DFB4DB;
+}
+
+
+
+
+
+/* ************************************************************************************************************ */
+/* MUSIC CONTROL BUTTONS */
+main:first-of-type footer {
+  position: fixed;
+
+  bottom: 3.5em;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+
+/* PLAY / PAUSE */
+main:first-of-type footer button:nth-child(2) {
+  background-image: var(--gradient);
+
+  border: none;
+  border-radius: 50%;
+
+  width: 7em;
+  height: 7em;
+
+  margin: 0 2em;
+}
+
+main:first-of-type footer button:nth-child(2) img {
+  display: block;
+  margin-left: 1.9em;
+}
+
+
+/* FORWARD / BACKWARD */
+main:first-of-type footer button:first-of-type,
+main:first-of-type footer button:last-of-type {
+  background-color: transparent;
+  border: none;
+}
+
+
+
+
+
+
+
+/* ************************************************************************************************************ */
+/* pijltje omhoog */
+
+main:first-of-type>img {
+  position: absolute;
+  bottom: 1em;
+  margin-left: calc(50vw - 12px);
+}
+
+
+
+
+/* SONGSECTIONS */
+/* Bron voor de swipefunctie: Sanne en https://codepen.io/ellie_html/pen/dyYjZyB?editors=0100 */
+
+main:first-of-type>ul {
+  margin: 0;
+  padding: 0;
+
+  height: 100vh;
+  width: 100vw;
+
+  position: absolute;
+
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  left: 0;
+}
+
+/* om de automatische scrollbar te laten verdwijnen */
+::-webkit-scrollbar {
+  display: none;
+}
+
+main:first-of-type>ul li {
+  list-style: none;
+  scroll-snap-align: start;
+
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+}
+
+
+
+
+
+/* THE WEEKND */
+main:first-of-type>ul li:first-of-type {
+  background-image: url(../images/weeknd.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 25%;
+}
+
+
+/* MICHAEL JACKSON */
+main:first-of-type>ul li:nth-of-type(2) {
+  background-image: url(../images/michael.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+
+/* THE KID LAROI */
+main:first-of-type>ul li:nth-of-type(3) {
+  background-image: url(../images/laroi.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+
+/* AJR */
+main:first-of-type>ul li:nth-of-type(4) {
+  background-image: url(../images/ajr.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+
+/* Jason Derulo */
+main:first-of-type>ul li:nth-of-type(5) {
+  background-image: url(../images/jalebi.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+
+
+
+
+
+
+
+
+
+/* ********************************************************************** */
+/* LAPTOP */
+@media screen and (min-width: 768px) {
+
+  /* eerste main: mobile layout */
+  main:first-of-type,
+  main:first-of-type footer {
+    position: fixed;
+    float: left;
+    max-width: var(--mobielBreed);
+  }
+
+  main:first-of-type header {
+    display: none;
+  }
+
+
+
+  /* SLIDER VAN NUMMER */
+  main:first-of-type ul li>input {
+    width: 350px;
+    margin-left: 25px;
+
+  }
+
+  main:first-of-type>ul li {
+    max-width: var(--mobielBreed);
+
+  }
+
+  main:first-of-type>ul {
+    max-width: var(--mobielBreed);
+    box-shadow: var(--boxShadow);
+  }
+
+  main:first-of-type>ul li section:first-of-type {
+    max-width: var(--mobielBreed);
+  }
+
+
+
+
+
+  /* ***************************************************************************** */
+  /* tweede main: bijkomende content voor de laptop */
+
+  main:last-of-type {
+    display: block;
+    margin-left: var(--mobielBreed);
+    width: calc(100vw - var(--mobielBreed));
+  }
+
+  main:last-of-type header {
+    height: 200px;
+    margin-left: 0px;
+    background-image: var(--gradient);
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  main:last-of-type header h1 {
+    margin-left: 1.2em;
+    font-size: 3em;
+  }
+
+
+
+
+
+
+/* lijst met nummers en artiesten */
+
+  main:last-of-type>ul {
+    padding: 8em 3em 2em 3em;
+  }
+
+  main:last-of-type>ul li {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: max-content max-content 1fr max-content;
+
+    padding: 0.7em 0px;
+
+    border-bottom: 0.75px solid grey;
+  }
+
+  main:last-of-type>ul li img {
+    width: 4em;
+    height: 4em;
+    margin: 0px 15px;
+  }
+
+  main:last-of-type>ul li section:first-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  /* play knop in playlist */
+  main:last-of-type ul li > button {
+    background-color: transparent;
+    border: none;   
+
+    display: flex;
+    align-self: center;
+  }
+
+  main:last-of-type ul li > button img {
+    width: 1.7em;
+    height: 1.7em;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+
+  /* LIKE SAVE SHARE knoppen */
+  main:last-of-type ul li section:last-of-type {
+    display: flex;
+    justify-self: flex-end;
+  }
+
+  main:last-of-type ul li section:last-of-type button {
+    background-color: transparent;
+    border: none;
+
+    width: 3.5em;
+    
+  }
+
+  main:last-of-type ul li section:last-of-type button img {
+    height: 2.5em;
+
+    padding: 0;
+    margin: 0;
+  }
+
+
+
+  /* voeg toe knop */
+  main:last-of-type > button {
+    width: 10em;
+    height: 3em;
+    
+    margin-left: calc(50% - 5em);
+    margin-bottom: 3em;
+
+    background-image: var(--gradient);
+    border: none;
+
+    font-family: inter;
+    font-weight: 600;
+  }
+
+  main:last-of-type > button:hover {
+    border: 1px solid white;
+    color: white;
+  }
+
+}

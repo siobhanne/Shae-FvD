@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="jouw naam">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Opdracht 2: Interactie galore - Frontend voor Designers</title>
+
+	<link href="styles/style.css" rel="stylesheet">
+	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+	<!-- font: Inter -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<main>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="playlist.html">Playlist</a></li>
+					<li><a href="index.html">Now playing</a></li>
+				</ul>
+			</nav>
+		</header>
+
+
+		<ul>
+			<!-- THE WEEKND -->
+			<li>
+				<section>
+					<h1>Starboy</h1>
+					<h2>The Weeknd (ft. Daft punk)</h2>
+				</section>
+
+				<!-- section 2: opslaan/delen van het nummer -->
+				<!-- ik wil dat elk nummer zijn eigen hartje / bookmark / delen knopje heeft mede ivm de lijst/database voor
+				het opslaan van het nummer -->
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+				<input type="range" min="0" max="100" value="0">
+
+				<audio>
+					<source src="audio/starboy.mp3" type="audio/mp3">
+				</audio>
+
+
+			</li>
+
+
+			<!-- MICHAEL JACKSON -->
+			<li>
+				<section>
+					<h1>Billy Jean</h1>
+					<h2>Michael Jackson</h2>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+				<input type="range" min="0" max="100" value="0">
+
+				<audio>
+					<source src="audio/Billy_Jean.mp3" type="audio/mp3">
+				</audio>
+
+			</li>
+
+
+			<!-- THE KID LAROI -->
+			<li>
+				<section>
+					<h1>Stay</h1>
+					<h2>The Kid Laroi (Ft. Justin Bieber)</h2>
+				</section>
+
+				<section>
+					<button><img src="./images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="./images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="./images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+				<input type="range" min="0" max="100" value="0">
+
+				<audio>
+					<source src="audio/stay.mp3" type="audio/mp3">
+				</audio>
+
+			</li>
+
+
+			<!-- AJR -->
+			<li>
+				<section>
+					<h1>Burn the house down</h1>
+					<h2>AJR</h2>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+				<input type="range" min="0" max="100" value="0">
+
+				<audio>
+					<source src="audio/burn_the_house_down.mp3" type="audio/mp3">
+				</audio>
+
+			</li>
+
+
+			<!-- JASEN DERULO -->
+			<li>
+				<section>
+					<h1>Jalebi Baby</h1>
+					<h2>Tesher x Jason Derulo</h2>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+				<input type="range" min="0" max="100" value="0">
+
+				<audio>
+					<source src="audio/jalebi_baby.mp3" type="audio/mp3">
+				</audio>
+
+			</li>
+
+		</ul>
+
+
+
+		<!-- MUZIEK CONTROL KNOPPEN -->
+
+		<footer>
+			<!-- backward - previous song -->
+			<button><img src="images/backward.svg"
+					alt="button met Twee driehoekjes naast elkaar wijzend naar links om terug te spoelen"></button>
+
+			<!-- play / pause -->
+			<button><img src="images/play.svg" alt="driehoek icoon voor afspelen en pauzeren"></button>
+
+			<!-- forward - next song -->
+			<button><img src="images/forward.svg"
+					alt="button met Twee driehoekjes naast elkaar wijzend naar rechts om door te spoelen"></button>
+		</footer>
+
+		<img src="images/arrow-up.svg" alt="pijltje omhoog als indicatie om te swipen.">
+	</main>
+
+
+
+
+
+
+	<!-- laptop content -->
+	<main>
+		<!-- Naam playlist -->
+		<header>
+			<h1>party vibes</h1>
+		</header>
+
+		<!-- lijst met nummers van de playlist -->
+		<ul>
+
+			<li>
+				<button><img src="images/play.svg" alt="interactieve driehoek icoon om het nummer af te spelen."></button>
+				<img src="images/brunoMars.jpg" alt="bruno mars">
+
+				<section>
+					<h2>Uptown Funk</h2>
+					<h3>Bruno Mars</h3>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+			</li>
+
+
+
+			<li>
+				<button><img src="images/play.svg" alt="interactieve driehoek icoon om het nummer af te spelen."></button>
+				<img src="images/duaLipa.jpg" alt="dua lipa">
+
+				<section>
+					<h2>Dua Lipa</h2>
+					<h3>Levitating</h3>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+			</li>
+
+
+
+			<li>
+				<button><img src="images/play.svg" alt="interactieve driehoek icoon om het nummer af te spelen."></button>
+				<img src="images/drake.jpg" alt="drake">
+
+				<section>
+					<h2>One Dance</h2>
+					<h3>Drake</h3>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+			</li>
+
+
+
+			<li>
+				<button><img src="images/play.svg" alt="interactieve driehoek icoon om het nummer af te spelen."></button>
+				<img src="images/pink.jpg" alt="pink">
+
+				<section>
+					<h2>Just give me a reason</h2>
+					<h3>Pink</h3>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+			</li>
+
+
+
+			<li>
+				<button><img src="images/play.svg" alt="interactieve driehoek icoon om het nummer af te spelen."></button>
+				<img src="images/layto.jpg" alt="layto">
+
+				<section>
+					<h2>Little poor me</h2>
+					<h3>Layto</h3>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+			</li>
+
+
+
+			<li>
+				<button><img src="images/play.svg" alt="interactieve driehoek icoon om het nummer af te spelen."></button>
+				<img src="images/MikePosner.jpg" alt="Mike Posner">
+
+				<section>
+					<h2>Cooler than me</h2>
+					<h3>Mike Posner</h3>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+			</li>
+
+
+
+			<li>
+				<button><img src="images/play.svg" alt="interactieve driehoek icoon om het nummer af te spelen."></button>
+				<img src="images/postMalone.jpg" alt="Post Malone">
+
+				<section>
+					<h2>Sunflower</h2>
+					<h3>Post Malone</h3>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+			</li>
+
+
+
+			<li>
+				<button><img src="images/play.svg" alt="interactieve driehoek icoon om het nummer af te spelen."></button>
+				<img src="images/stromae.jpg" alt="Stromae">
+
+				<section>
+					<h2>L'enfer</h2>
+					<h3>Stromae</h3>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+			</li>
+
+
+
+			<li>
+				<button><img src="images/play.svg" alt="interactieve driehoek icoon om het nummer af te spelen."></button>
+				<img src="images/twoFeet.jpg" alt="Two Feet">
+
+				<section>
+					<h2>I feel like i'm drowning</h2>
+					<h3>Two Feet</h3>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+			</li>
+
+
+
+			<li>
+				<button><img src="images/play.svg" alt="interactieve driehoek icoon om het nummer af te spelen."></button>
+				<img src="images/XXXtenctation.jpg" alt="XXXtenctation">
+
+				<section>
+					<h2>Scared of the Dark</h2>
+					<h3>XXXtenctation</h3>
+				</section>
+
+				<section>
+					<button><img src="images/heart.svg" alt="harticoon om het nummer leuk te vinden"></button>
+
+					<button><img src="images/bookmark.svg"
+							alt="bookmark icoon om het nummer in een playlist op te slaan"></button>
+
+					<button><img src="images/share.svg" alt="delen icoon om het nummer te delen"></button>
+				</section>
+
+			</li>
+
+		</ul>
+
+		<button>Voeg toe +</button>
+	</main>
+
+
+	<script src="scripts/script.js"></script>
+</body>
+
+</html>
