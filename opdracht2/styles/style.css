@@ -193,6 +193,7 @@ h3 {
   position: absolute;
   bottom: 13em;
   right: 0.5em;
+
   display: flex;
   flex-direction: column;
 
@@ -256,8 +257,10 @@ h3 {
 
 .nowPlaying ul li>input {
   position: absolute;
+
   bottom: 12.5em;
   margin-left: 5vw;
+
   display: flex;
   flex-direction: column;
 
@@ -442,8 +445,10 @@ h3 {
 /* ************************************************************************************************** */
 
 @media screen and (min-width: 768px) {
+  /* ****************** */
+  /* EERSTE SECTION .NOWPLAYLING: mobile layout */
+  /* ****************** */
 
-  /* eerste section met class: mobile layout */
   .nowPlaying,
   .nowPlaying footer {
     position: fixed;
@@ -451,10 +456,21 @@ h3 {
     max-width: var(--mobielBreed);
   }
 
+  /* om de tekst playlist | now playing weg te halen */
   .nowPlaying header {
     display: none;
   }
 
+
+  /* lijst met artiesten */
+  .nowPlaying>ul {
+    max-width: var(--mobielBreed);
+    box-shadow: var(--boxShadow);
+  }
+
+  .nowPlaying>ul li {
+    max-width: var(--mobielBreed);
+  }
 
 
   /* SLIDER VAN NUMMER */
@@ -464,16 +480,8 @@ h3 {
     /* de width en margin klopte niet in em */
   }
 
-  .nowPlaying>ul li {
-    max-width: var(--mobielBreed);
 
-  }
-
-  .nowPlaying>ul {
-    max-width: var(--mobielBreed);
-    box-shadow: var(--boxShadow);
-  }
-
+  /* tekst: naam artiest en nummer */
   .nowPlaying>ul li section:first-of-type {
     max-width: var(--mobielBreed);
   }
@@ -484,9 +492,10 @@ h3 {
 
 
 
+
   /* ***************************************************************************** */
+  /* TWEEDE SECTION .PLAYLIST: bijkomende content voor de laptop */
   /* ***************************************************************************** */
-  /* tweede section met class: bijkomende content voor de laptop */
 
   .playlist {
     display: block;
@@ -514,7 +523,7 @@ h3 {
 
 
 
-/* lijst met nummers en artiesten */
+  /* lijst met nummers en artiesten */
 
   .playlist>ul {
     padding: 8em 3em 2em 3em;
@@ -547,15 +556,15 @@ h3 {
 
 
   /* play knop in playlist */
-  .playlist ul li > button {
+  .playlist ul li>button {
     background-color: transparent;
-    border: none;   
+    border: none;
 
     display: flex;
     align-self: center;
   }
 
-  .playlist ul li > button img {
+  .playlist ul li>button img {
     width: 1.7em;
     height: 1.7em;
 
@@ -577,7 +586,7 @@ h3 {
     border: none;
 
     width: 3.5em;
-    
+
   }
 
   .playlist ul li section:last-of-type button img {
@@ -591,10 +600,10 @@ h3 {
 
 
   /* voeg toe knop */
-  .playlist > button {
+  .playlist>button {
     width: 10em;
     height: 3em;
-    
+
     margin-left: calc(50% - 5em);
     margin-bottom: 3em;
 
@@ -605,7 +614,7 @@ h3 {
     font-weight: 600;
   }
 
-  .playlist > button:hover {
+  .playlist>button:hover {
     border: 1px solid white;
     color: white;
   }
